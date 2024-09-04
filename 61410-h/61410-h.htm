@@ -1,0 +1,1101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>
+      The Project Gutenberg eBook of An Attempt to Analyse the Automaton Chess Player, by Anonymous
+    </title>
+    <link rel="coverpage" href="images/cover.jpg" />
+    <style type="text/css">
+
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.covernote {visibility: hidden; display: none;}
+div.chapter {page-break-before: always;}
+
+h1,h2 { text-align: center; clear: both; }
+h1 {page-break-before: always; }
+h2 {page-break-before: avoid;}
+
+p { margin-top: .51em; text-align: justify; text-indent: 1.5em; margin-bottom: .49em; }
+p.author    { margin-top: 1em; margin-right: 5%; text-align: right;}
+p.indent    { text-indent: 1.5em;}
+p.f90       { font-size: 90%;  text-align: center; text-indent: 0em; }
+p.f120      { font-size: 120%; text-align: center; text-indent: 0em; }
+p.f150      { font-size: 150%; text-align: center; text-indent: 0em; }
+.fontsize150  { font-size: 150%; }
+
+.space-above1 { margin-top: 1em; }
+.space-above2 { margin-top: 2em; }
+.space-above3 { margin-top: 3em; }
+.space-below1 { margin-bottom: 1em; }
+.space-below2 { margin-bottom: 2em; }
+
+hr.r5     {width: 5%; margin-top: 1em; margin-bottom: 1em;
+                      margin-left: 47.5%; margin-right: 47.5%; }
+hr.r25  {width: 25%; margin-top: 3em; margin-bottom: 3em;
+                     margin-left: 37.5%; margin-right: 37.5%; }
+hr.tb   {width: 45%; margin-left: 27.5%; margin-right: 27.5%; }
+hr.chap {width: 65%; margin-left: 17.5%; margin-right: 17.5%; }
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tdl     {text-align: left;}
+.tdl_ws1 {text-align: left; padding-left:  1em;}
+.tdl_ws3 {text-align: left; padding-left:  3em;}
+.tdr     {text-align: right;}
+.tdc     {text-align: center;}
+
+.pagenum {
+    /*  visibility: hidden;  */
+    position: absolute;
+    left: 92%;
+    font-size: smaller;
+    text-align: right;
+}
+
+.bbox     {border: solid 2px;}
+.center   {text-align: center; text-indent: 0; }
+.smcap    {font-variant: small-caps;}
+
+img {max-width: 100%; height: auto;}
+
+.figcenter   { margin: auto; text-align: center; }
+
+.poetry-container { text-align: center; }
+.poem { display: inline-block; text-align: left; }
+.poem.stanza {margin: 1em 0em 1em 0em;}
+
+.poem span.i2  {display: block; margin-left: 1em; padding-left: 3em; text-indent: -3em;}
+.poem span.i38 {display: block; margin-left: 19em; padding-left: 3em; text-indent: -3em;}
+.poem span.i42 {display: block; margin-left: 21em; padding-left: 3em; text-indent: -3em;}
+
+.transnote {background-color: #E6E6FA;
+    color: black;
+     font-size:smaller;
+     padding:0.5em;
+     margin-bottom:5em;
+     font-family:sans-serif, serif; }
+
+.ws3   {display: inline; margin-left: 0em; padding-left:  3em;}
+
+ @media handheld { .pagenum   {display:none;}}
+
+    </style>
+  </head>
+<body>
+
+<div class="transnote bbox covernote">
+<p class="f120 space-above1">Transcriber's Note:</p>
+<hr class="r5" />
+<p class="indent">The cover image was created by the transcriber, and is in the public domain.</p>
+</div>
+
+<hr class="chap" />
+<h1>AN ATTEMPT TO ANALYSE<br /><small>THE</small><br /><big>AUTOMATON<br /> CHESS PLAYER</big>.</h1>
+<hr class="r25" />
+<p class="center"><span class="smcap">Howlett</span> and <span class="smcap">Brimmer</span>,<br />
+Printers, 10, Frith Street, Soho.</p>
+<hr class="r25" />
+
+<div class="chapter">
+<div class="figcenter">
+    <a name="FIG_1" id="FIG_1"></a>
+<table border="0" cellspacing="0" summary=" " cellpadding="16" >
+  <tbody><tr>
+      <td class="tdl"><b><big><i>Plate 1.</i></big></b></td>
+      <td class="tdc"><span class="fontsize150"><b><i>Fig. 1.</i></b></span></td>
+      <td class="tdr"><b><big><i>To face the Title.</i></big></b></td>
+    </tr>
+ </tbody>
+</table>
+    <img src="images/fig01.jpg" alt="" width="600" height="458" />
+</div></div>
+
+<div class="figcenter">
+    <a name="FIG_2" id="FIG_2"></a>
+    <img src="images/fig02.jpg" alt="" width="600" height="507" />
+    <p class="f150"><b><i>Fig. 2.</i></b></p>
+    <p class="center"><i>Drawn on Stone by the Author.&emsp;Printed by C. Hullmandel.</i></p>
+</div>
+
+<div class="chapter">
+<p class="center space-above3">AN ATTEMPT TO ANALYSE</p>
+<p class="center">THE</p>
+<p class="f150">AUTOMATON CHESS PLAYER,</p>
+<p class="center">OF</p>
+<p class="center">MR. DE KEMPELEN.</p>
+<hr class="r25" />
+<p class="center">WITH AN EASY METHOD OF IMITATING THE MOVEMENTS<br />OF THAT CELEBRATED FIGURE.</p>
+<p class="center space-above2">ILLUSTRATED BY ORIGINAL DRAWINGS.</p>
+<hr class="r25" />
+<p class="center">TO WHICH IS ADDED, A COPIOUS COLLECTION OF</p>
+<p class="f150">THE KNIGHT’S MOVES</p>
+<p class="center">OVER THE CHESS BOARD.</p>
+
+<p class="f120 space-above3"><i>LONDON</i>:</p>
+<p class="center">PRINTED FOR J. BOOTH,<br /> DUKE STREET, PORTLAND PLACE.<br />1821.</p>
+</div>
+
+<hr class="chap" />
+<div class="chapter">
+<div class="poetry-container"><div class="poem"><div class="stanza">
+<span class="i2">Mine eyes are made the fools o’ the other senses.</span>
+<span class="i38"><span class="smcap">Shakspeare.</span></span>
+</div><div class="stanza">
+<span class="i2">&nbsp;</span>
+<span class="i2">I had not thought to have unlockt my lips</span>
+<span class="i2">In this unhallowed air, but that this juggler</span>
+<span class="i2">Would think to charm my judgment, as mine eyes.</span>
+<span class="i42"><span class="smcap">Milton.</span></span>
+</div></div></div></div>
+
+<p><span class="pagenum"><a name="Page_5" id="Page_5">[Pg 5]</a></span></p>
+<hr class="chap" />
+<div class="chapter"><h2>AN ATTEMPT TO ANALYSE, &amp;c.</h2></div>
+
+<p>The Automaton Chess Player was first introduced into England by Mr. de
+Kempelen, its inventer, about the year 1783. It was brought again into
+this country two years ago, and exhibited under the direction of a very
+ingenious gentleman, Mr. Maelzel.</p>
+
+<p>The annexed drawings, (plate 1, figs. 1 and 2,) represent the general
+appearance of the machine. It runs on castors, and is either seen
+on the floor when the doors of the apartment are thrown open, or is
+wheeled into the room at the commencement of the exhibition.
+<span class="pagenum"><a name="Page_6" id="Page_6">[Pg 6]</a></span></p>
+
+<p>The exhibiter, in order to shew the mechanism, as he informs the
+spectators, unlocks the door (<a href="#FIG_1"><span class="smcap">a</span>, fig. 1</a>.)
+of the chest, which exposes to view a small cupboard, lined with black or dark coloured
+cloth, and containing different pieces of machinery, which seem to
+occupy the whole space. He next opens the door (<span class="smcap">b</span>,
+<a href="#FIG_2">fig. 2</a>.) at the back of the same cupboard, and, holding a lighted
+candle at the opening, still further exposes the machinery within. The candle being
+withdrawn, the door (<span class="smcap">b</span>) is then locked. The drawer
+(<a href="#FIG_1"><span class="smcap">g g</span>, fig. 1</a>.) in the front of the chest is
+next opened, and a set of chess men, a small box of counters, and a cushion for the support
+of the Automaton’s arm, are taken out of it. The exhibiter now opens the
+two front doors (<a href="#FIG_1"><span class="smcap">c c</span>, fig. 1</a>.) of the large cupboard,
+and the back door (<a href="#FIG_2"><span class="smcap">d</span>, fig. 2</a>.) of the same, and
+applies a candle as in the former case. This cupboard is lined with cloth like the other, but
+<span class="pagenum"><a name="Page_7" id="Page_7">[Pg 7]</a></span>
+it contains only a few pieces of machinery. The chest is now wheeled
+round, the garments of the figure are lifted up, and the door
+(<a href="#FIG_1"><span class="smcap">e</span>, fig. 2</a>,) in the trunk, and another (<span class="smcap">f</span>,)
+in the thigh, are opened. But it must be observed that the doors (<span class="smcap">b</span>
+and <span class="smcap">d</span>) are closed. The circumstance is mentioned, because
+Mr. de Windisch, in his letters on this subject, has a passage which
+would seem to imply that Mr. Maelzel’s mode of exhibiting the interior
+differs from that which Mr. de Kempelen employed. “But do not imagine,”
+says De Windisch, “like many others, that the inventer shuts one door
+as he opens another; the entire Automaton is seen at the same time
+uncovered, his garments turned up, and the drawer opened, as well as
+all the doors of the chest.”</p>
+
+<p>Now a reference to De Kempelen’s second drawing, published by Mechel,
+and annexed to De Windisch’s letters, will shew that, when the chest
+<span class="pagenum"><a name="Page_8" id="Page_8">[Pg 8]</a></span>
+was turned round, the doors (<span class="smcap">b</span> and <span class="smcap">d</span>)
+were actually closed, as they always have been under the direction of Mr. Maelzel.
+In the chest of the latter gentleman, indeed, the doors in question
+are suspended by hinges attached to the upper part, (<a href="#FIG_2">as in fig. 2</a>),
+and consequently close by their own gravity. But the fact is, that the
+exhibiter never fails to lock them, though he leaves the keys in one of
+the locks. The other doors are allowed to swing about whilst the chest
+is wheeled round.</p>
+
+<p>The chest is now restored to its former position on the floor; the
+doors in front, and the drawer, are closed and locked; and the
+exhibiter, after he has occupied some time at the back of the chest, in
+apparently adjusting the machinery, removes the pipe from the hand of
+the figure, winds up the works, and the Automaton begins to move.</p>
+
+<p><span class="pagenum"><a name="Page_9" id="Page_9">[Pg 9]</a></span>
+These movements, resulting as they appear to do, from mere mechanism,
+yet strongly impressed with the distinctive character of an
+intellectual guidance, have excited the admiration of the curious
+during a period little short of forty years. In that time various
+conjectures have been offered to the world as solutions of the problem;
+but no one, as far as I know, have attempted to imitate the movements,
+it is fair to conclude, either that the means proposed are inadequate
+to the end, or that the description of them is too imperfect to enable
+a workman to complete the machinery.</p>
+
+<p>Automata may be divided into three classes—the simple—the
+compound—and the spurious.</p>
+
+<p>The first class comprises those insulated Automata whose movements
+result from mechanism alone; by the aid of which they perform certain
+<span class="pagenum"><a name="Page_10" id="Page_10">[Pg 10]</a></span>
+actions, and continue them, so long as the moving force is kept in an
+active state.</p>
+
+<p>The second class includes those Automata, which, like the former, are
+moved by machinery; but, possessing at the same time a communication,
+not immediately apparent, with human agency, are enabled to change the
+regular order and succession of their movements, according to existing
+circumstances; and hence, in some measure, to assume the character of
+living beings.</p>
+
+<p>The third class contains those Automata which, under the semblance only
+of mechanism, are wholly directed and controlled by a concealed human agent.</p>
+
+<hr class="tb" />
+
+<p><span class="pagenum"><a name="Page_11" id="Page_11">[Pg 11]</a></span>
+The phenomena of the Chess Player are inconsistent with the effects
+of mere mechanism; for, however great and surprising the powers of
+mechanism may be, the movements that spring from it, are necessarily
+limited and uniform: it cannot usurp and exercise the faculties of
+mind; it cannot be made to vary its operations, so as to meet the
+ever-varying circumstances of a game of chess. This is the province of
+intellect alone; and the Chess Player must consequently relinquish all
+claim to be admitted into the first division. Let us examine its title
+to be ranked in the second class.</p>
+
+<hr class="tb" />
+
+<p>The chess board contains sixty-four squares, and in order to execute
+the movements of the Chess Player, distinct trains of machinery must be
+formed, which shall be capable, when set in motion, of conveying the
+hand of the Automaton to each, and to any, of these several squares.
+<span class="pagenum"><a name="Page_12" id="Page_12">[Pg 12]</a></span>
+Having arrived at a square, and taken up a chess man, it will be
+requisite, either to withdraw the hand towards the side, and without
+the limits of the board, for the purpose of letting drop the chess man
+there, and thence to proceed to another square, and remove a chess man
+to a third square; or it may be required to pass at once from the first
+square to any other on the board, and there to deposit the man. These
+movements must be promptly performed, and repeated as often as the
+circumstances of the game may call for them.</p>
+
+<p>Setting aside a great variety of minor details, it will be evident to
+any person, even slightly acquainted with mechanics, that the execution
+of these movements, so extensive, so complicated, and so variable,
+would be attended with difficulties almost insurmountable; but we
+<span class="pagenum"><a name="Page_13" id="Page_13">[Pg 13]</a></span>
+will suppose for a moment that these obstacles are overcome; let it
+be conceded that a machine has been constructed so perfect, that, on
+giving motion to the respective trains, the required movement shall
+be instantly performed. What then? The main object will be still
+unattained! Where is the intelligence and the “promethean heat” that
+can animate the Automaton and direct its operations? Not only must
+an intellectual agent be provided, but between such an agent and his
+deputy, the Automaton, a direct communication must be formed and
+preserved, liable to no interruption, and yet so secret that the
+penetrating eye of the most inquisitive observer may not be able to
+detect it. Till this be done, the Chess Player’s title to be admitted
+into the second division will, at any rate, continue in abeyance.</p>
+
+<p>I am aware that on this part of the subject conjecture has been busy,
+<span class="pagenum"><a name="Page_14" id="Page_14">[Pg 14]</a></span>
+and different plans have been devised for the maintenance of the
+intercourse alluded to. The task has been imposed on the exhibiter of
+the machine, he being the only person on whom it could devolve with
+even a shadow of probability; and to effect his purpose it has been
+suggested that he might touch certain springs, or pull “a wire not
+much thicker than a hair,” or be furnished with a powerful magnet. But
+such conjectures are unworthy of serious refutation; for besides the
+uncertainty and constant liability to interruption of such modes of
+communication, they are actually at variance with the uniform conduct
+of the exhibiter. Whoever has witnessed the exhibition will have seen
+that the exhibiter is not confined to a particular spot in the room,
+but, on the contrary, that he is frequently, during the progress of the
+game, at a distance from the chest, far beyond the sphere of influence
+<span class="pagenum"><a name="Page_15" id="Page_15">[Pg 15]</a></span>
+of any of these proposed modes; and if, at such times, the Automaton
+can move a single joint, it is proof decisive that its action springs
+from another source.</p>
+
+<p>Having now shewn how difficult, and perhaps impossible, it would be to
+execute the movements of the Chess Player by mechanism, and maintain,
+at the same time, a communication with the agent, who would be required
+to give life, as it were, and intelligence to the operations, it
+becomes necessary to inquire whether the prevailing opinion, which
+attributes these movements to machinery, be, or be not, established
+in fact; for, if this opinion should be found, on examination, to
+originate merely in the artful management and display of some parts of
+the apparatus, and to rest on no solid basis, there would be no longer
+any embarrassment in appreciating the real value of the Chess Player,
+<span class="pagenum"><a name="Page_16" id="Page_16">[Pg 16]</a></span>
+nor in apportioning a proper station for it, considered as a work of art.</p>
+
+<p>At the commencement of the exhibition the spectators are gratuitously
+made acquainted with the interior of the chest, which is divided into
+two unequal compartments, and occupied by pieces of machinery, so
+arranged, as apparently to render the concealment of any human being
+impossible. When the movements of the Automaton begin, the beholders,
+in the first moments of surprise, and in the absence of any ostensible
+living cause, very naturally refer the effect to the mechanism, which
+has been exhibited; and with likelihood enough, for the movements
+immediately follow the familiar action and well known sound of winding
+up clockwork, and are moreover very skillfully accompanied by the
+grating noise of moving wheels. But, these indications excepted, where
+<span class="pagenum"><a name="Page_17" id="Page_17">[Pg 17]</a></span>
+is the evidence that the machinery moves, or that the slightest
+influence is exerted by it on the arm of the Automaton? The whole is
+excluded from view, and a moment’s reflection will convince any one
+that no stress can be laid on the winding up, nor on the accompanying
+sounds, which are imitable in various ways.</p>
+
+<p>If, however, no proof can be given of the actual movement of the
+machinery, the following considerations will tend to shew that it
+remains quiescent, and is probably not formed for motion.</p>
+
+<p>An artist, whose talents had enabled him to contrive machinery capable
+of executing the varied and extensive movements displayed by the
+Automaton, would surely be desirous of laying open to view as much of
+the mechanism of his contrivance, while in actual motion, as he could
+do, consistently with the reservation of his secret; if for no other
+<span class="pagenum"><a name="Page_18" id="Page_18">[Pg 18]</a></span>
+reason, at least to convince the lookers-on that deception formed no
+part of his plan. Now it cannot be reasonably urged, in vindication
+of the inventer’s forbearance, in the instance of the Chess Player,
+that even a glance at any part of the machinery in motion would betray
+the secret; for a question will immediately arise, Why then is the
+machinery at rest so freely exposed? On that score no apprehension
+seems to be entertained; the chest is ostentatiously opened, and the
+semblance, at least, of wheels, and pullies, and levers, is submitted
+to inspection without reserve: but when their reality should appear,
+and their connection with the Automaton be made manifest, the doors
+are carefully closed, and the spectators are required to pay large
+drafts on their credulity, without any means of further examination.
+The glaring contradiction between eager display on the one hand, and
+<span class="pagenum"><a name="Page_19" id="Page_19">[Pg 19]</a></span>
+studied concealment on the other, can only be reconciled by considering
+the exhibition of the mechanism as a mere stratagem, calculated to
+distract the attention, and mislead the judgment, of the spectators.</p>
+
+<p>The truth of this opinion receives additional support from the regular
+and undeviating mode of disclosing the interior of the chest. If the
+mechanism were the real object in view, the whole being quiescent, it
+would be matter of indifference which part was first laid open; and
+accident alone, unless powerful reasons operated against it, would lead
+occasionally to some variation. But no variation has ever been observed
+to take place. One uniform order, or routine, is strictly adhered to,
+and this circumstance alone is sufficient to awaken suspicion, for it
+shews plainly that more is intended by the disclosure than is permitted
+to meet the eye.</p>
+
+<p><span class="pagenum"><a name="Page_20" id="Page_20">[Pg 20]</a></span>
+It has already been suggested, that little stress could be laid on the
+winding up: indeed the simple act of turning round a key or winder
+can offer no argument in proof of the efficiency of the machinery,
+unless at the same time it could be shewn that the key, in turning,
+either acted upon a spring, or pulled up a weight, for the purpose of
+giving motion to the machinery in question. But unluckily for the Chess
+Player, the phenomena afford positive proof that the axis turned by the
+key is quite free, and unconnected, either with a spring, or a weight,
+or any system of machinery.</p>
+
+<p>In all machines requiring to be wound up, two consequences are
+inseparable from their construction: the first is, that, in winding up
+the machinery, the key is limited in the number of its revolutions;
+and the second is, that some relative proportion must be constantly
+<span class="pagenum"><a name="Page_21" id="Page_21">[Pg 21]</a></span>
+maintained betwixt the winding up and the work performed, in order to
+enable the machine to continue its movements. Now these results are
+not observable in the Chess Player; for the Automaton will sometimes
+execute sixty-three moves with only one winding up; at other times
+the exhibiter has been observed to repeat the winding up after seven
+moves, and even three moves; and once, probably from inadvertence,
+without the intervention of a single move; whilst, in every instance
+and the circumstance, though trifling, calls for particular attention,
+(for, in these matters, be it remembered, “trifles light as air, are
+confirmations strong,”) the key appeared to perform the same number of
+revolutions; evincing thereby, that the revolving axis was unconnected
+with machinery, except, perhaps, a ratchet-wheel and click, or some
+similar apparatus, to enable it to produce the necessary sounds,
+<span class="pagenum"><a name="Page_22" id="Page_22">[Pg 22]</a></span>
+consequently that the key, like that of a child’s watch, might be
+turned, whenever the purposes of the exhibition seemed to require it.</p>
+
+<hr class="tb" />
+
+<p>I shall now pass on to the third division, and point out a method by
+which any person, well skilled in the game, and not exceeding the
+ordinary bulk or stature, may secretly animate the Automaton, and
+successfully imitate the movements of Mr. De Kempelen’s Chess Player.</p>
+
+<p>The general plan and dimensions of the chest will be understood by
+inspecting the plates, but some particulars, relative to the interior,
+will require further explanation.</p>
+
+<p>The drawer (<span class="smcap">gg</span>, plate 5,) when closed, does not reach to the
+back of the chest; it leaves a space (<span class="smcap">o</span>) behind it, about 1
+foot 2 inches broad, 8 inches high, and 3 feet 11 inches long. This
+space is never exposed to view.</p>
+
+<p><span class="pagenum"><a name="Page_23" id="Page_23">[Pg 23]</a></span>
+The small cupboard is divided into two parts by the door or screen
+(<a href="#FIG_6"><span class="smcap">i</span>, fig. 6</a>,) which is moveable on a hinge, and is so
+contrived that when <span class="smcap">b</span> is closed, this screen may be closed also. The
+machinery (<span class="smcap">h</span>) occupies the whole of the front division as far
+as <span class="smcap">i</span>; the hinder division is nearly empty, and communicates
+with the space behind the drawer, the floor of this division being
+removed.</p>
+
+<p>The back of the great cupboard is double, and the part (<span class="smcap">p
+q</span>,) to which the quadrants, &amp;c. are attached, moves on a joint
+(<span class="smcap">q</span>), at the upper part, and forms, when raised, an opening
+(<span class="smcap">s</span>) between the two cupboards, by carrying with it part of the
+partition (<span class="smcap">r</span>), which is composed of cloth stretched tight.
+<a href="#FIG_10">Fig. 10</a> shews the false back closed. <a href="#FIG_11">Fig. 11</a>
+shews the same raised, forming the opening (<span class="smcap">s</span>) between the chambers.</p>
+
+<p><span class="pagenum"><a name="Page_24" id="Page_24">[Pg 24]</a></span>
+When the trunk of the figure is exposed by lifting up the dress, it
+will be seen that a great part of it is occupied by an inner trunk
+(<span class="smcap">n</span>), which passes off towards the back in the form
+of an arch, (<a href="#FIG_2">fig. 2</a>), and conceals a portion of the interior
+from the view of the spectators. This inner trunk opens to the chest by an aperture
+(<a href="#FIG_9"><span class="smcap">t</span>, fig. 9</a>), about 1 foot 3 inches
+high, by 1 foot broad.</p>
+
+<p>When the false back is raised, the two chambers, the trunk, and the
+space behind the drawer, are all connected together.</p>
+
+<p>The player may be introduced into the chest through the sliding panel
+(<a href="#FIG_6"><span class="smcap">u</span>, fig. 6</a>), at the end. He will then
+elevate the false back of the large cupboard, and assume the position represented by
+the dotted lines in figs. 3 and 4. Every thing being thus prepared, “the
+charm’s wound up,” and the exhibiter may begin his operations by
+<span class="pagenum"><a name="Page_25" id="Page_25">[Pg 25]</a></span>
+opening the door (<span class="smcap">a</span>). From the crowded and very
+ingenious disposition of the machinery in this cupboard, the eye is unable
+to penetrate far beyond the opening, and the spectator is led to
+conclude that the whole space is occupied with a similar apparatus.
+This illusion is strengthened and confirmed by observing the
+glimmering light which plays among the intricacies of the machinery,
+and occasionally meets the eye, when the lighted candle is held at
+the door (<span class="smcap">b</span>). A fact, too, is ascertained, which is
+equally satisfactory, though indeed for opposite reasons, to the spectator and
+the exhibiter, viz. that no opake body of any magnitude is interposed
+between the light and the spectator’s eye. The door (<span class="smcap">b</span>) must
+now be locked, and the screen (<span class="smcap">i</span>) closed, which being done at
+the moment the light is withdrawn, will wholly escape observation.</p>
+
+<p><span class="pagenum"><a name="Page_26" id="Page_26">[Pg 26]</a></span>
+It has already been mentioned, that the door (<span class="smcap">b</span>),
+from its construction, closes by its own weight; but as the player’s head will
+presently be very near it, the secret would be endangered, if, in
+turning round the chest, this door were, by any accident, to fly open;
+it becomes necessary, therefore, “to make assurance double sure,” and
+turn the key. If the circumstance should be observed, it will probably
+be considered as accidental, the keys being immediately wanted for the
+other locks.</p>
+
+<p>The opening (<span class="smcap">b</span>) being once secured, and the screen
+(<span class="smcap">i</span>) closed, the success of the experiment may be deemed
+complete. The secret is no longer exposed to hazard; and the exhibiter
+is at liberty to shape his conduct in any way, he may think, most
+likely to secure the confidence of the spectators, and lead them
+<span class="pagenum"><a name="Page_27" id="Page_27">[Pg 27]</a></span>
+insensibly from the main object of pursuit. The door (<span class="smcap">a</span>)
+may be safely left open; and this will tend to confirm the opinion,
+which the spectators probably formed on viewing the candle through
+this cupboard, that no person was concealed within it: it will further
+assure them that nothing can pass in the interior without their
+knowledge, so long as this door continues open.</p>
+
+<p>The drawer stands next in the order of succession: it is opened,
+<i>apparently</i>, for the purpose of taking out the chess men, cushion, &amp;c.
+but <i>really</i> to allow time for the player to change his position,
+(<a href="#FIG_5">see fig. 5</a>.) and to replace the false back and the partition,
+preparatory to the opening of the great cupboard.</p>
+
+<p>The machinery is so thinly scattered over this cupboard, that the eye
+surveys the whole space at one glance, and it might seem unnecessary
+<span class="pagenum"><a name="Page_28" id="Page_28">[Pg 28]</a></span>
+to open a door at the back, and to hold a lighted candle there, as in
+the former instance; but the artifice is dictated by sound policy,
+which teaches that the exhibiter cannot be too assiduous in affording
+facilities to explore every corner and recess, which, he well knows,
+contain nothing that he is desirous of concealing.</p>
+
+<p>The chest may now be wheeled round for the purpose of shewing the trunk
+of the figure; leaving, however, the front doors of the great chamber
+open. The bunch of keys, too, should be suffered to remain in the door
+(<span class="smcap">d</span>); for the apparent carelessness of such a proceeding
+will serve to allay any suspicion, which the circumstance of locking the
+door (<span class="smcap">b</span>) might have excited, more especially as
+the two doors resemble one another in point of construction.</p>
+
+<p>When the drapery has been lifted up, and the doors in the trunk and
+<span class="pagenum"><a name="Page_29" id="Page_29">[Pg 29]</a></span>
+thigh opened, the chest may be returned to its former situation, and
+the doors be closed. In the mean-time the player should withdraw his
+legs from behind the drawer, as he will not so easily effect this
+movement after the drawer has been pushed in.</p>
+
+<p>Here let us pause awhile, and compare the real state of the chest
+at this time, with the impression which, at a similar period of an
+exhibition of the Chess Player, has generally been left on the minds
+of the spectators; the bulk of whom have concluded that each part of
+the chest had been successively exposed; and that the whole was at that
+time open to inspection: whereas, on the contrary, it is evident that
+some parts had been entirely withheld from view, others but obscurely
+shewn, and that nearly half of the chest was then excluded from their
+<span class="pagenum"><a name="Page_30" id="Page_30">[Pg 30]</a></span>
+sight. Hence we learn how easily, in matters of this sort, the judgment
+may be led astray by an artful combination of circumstances, each
+assisting the other towards the attainment of one object.</p>
+
+<p>When the doors in front have been closed, the exhibiter may occupy as
+much time, as he finds necessary, in apparently adjusting the machinery
+at the back, whilst the player is taking the position described in
+figs. 7 and 8. In this position he will find no difficulty in executing
+every movement required of the Automaton: his head being above the
+table, he will see the chess board through the waistcoat, as easily
+as through a veil; and his left hand extending beyond the elbow of
+the figure, he will be enabled to guide its hand to any part of the
+board, and to take up and let go a chess man with no other “delicate
+mechanism” than a string communicating with the fingers. His right hand
+<span class="pagenum"><a name="Page_31" id="Page_31">[Pg 31]</a></span>
+being within the chest, may serve to keep in motion the contrivance for
+producing the noise, which is heard during the moves, and to perform
+the other tricks of moving the head, tapping on the chest, &amp;c.</p>
+
+<p>In order to facilitate the introduction of the player’s left arm into
+the arm of the figure, the elbow of the latter is obliged to be drawn
+backwards; and to account for, and conceal, this strained attitude, a
+pipe is ingeniously placed in the Automaton’s hand. This pipe must not
+be removed till the other arrangements are completed.</p>
+
+<p>When all is ready, and the pipe removed, the exhibiter may turn round
+the winder, or key, to give the impression to the spectators of winding
+<span class="pagenum"><a name="Page_32" id="Page_32">[Pg 32]</a></span>
+up a spring, or weight, and to serve as a signal to the player to set
+the head of the Automaton in motion.</p>
+
+<p>The above process is simple, feasible, and effective; shewing
+indisputably that the phenomena may be produced without the aid of
+machinery, and thereby rendering it probable that the Chess Player
+belongs in reality to the third class of Automata, and derives its
+merit solely from the very ingenious mode by which the concealment of a
+living agent is effected.</p>
+
+<p>In conducting this analysis, the author disclaims even the slightest
+wish or intention to depreciate, or detract from, the real merits of
+Mr. De Kempelen: those merits have long since received the stamp of
+public approbation; indeed, a more than ordinary share of skill and
+<span class="pagenum"><a name="Page_33" id="Page_33">[Pg 33]</a></span>
+ingenuity must have fallen to his lot, who could imagine and execute a
+machine (it matters not by what means the phenomena are brought about)
+which has never failed to delight the spectators, by exciting and
+maintaining, above all other contrivances of the kind, that pleasing
+delusion in the mind, which the Roman poet has so happily denominated
+“<i>Mentis gratissimus error</i>.”</p>
+
+<p class="author"><i>December, 1820.</i></p>
+
+<p><span class="pagenum"><a name="Page_34" id="Page_34">[Pg 34]</a></span></p>
+<hr class="chap" />
+<p><span class="pagenum"><a name="Page_35" id="Page_35">[Pg 35]</a></span></p>
+
+<div class="chapter"><h2>EXPLANATION OF THE PLATES.</h2></div>
+<hr class="r5" />
+<table border="0" cellspacing="0" summary="Explanation of Plates." cellpadding="0" >
+  <tbody><tr>
+      <td class="tdc" colspan="2">PLATE I.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_1">Fig. 1</a>.</td>
+      <td class="tdl_ws1">A perspective view of the Automaton, seen in</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">front, with all the doors thrown open.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_2">Fig. 2</a>.</td>
+      <td class="tdl_ws1">An elevation of the back of the Automaton.</td>
+    </tr><tr>
+      <td class="tdc" colspan="2"><br />PLATE II.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_3">Fig.3</a>.</td>
+      <td class="tdl_ws1">An elevation of the front of the chest, the</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">dotted lines representing the player</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">in the first position.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_4">Fig. 4</a>.</td>
+      <td class="tdl_ws1">A side elevation, shewing the player in the</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">same position.</td>
+    </tr><tr>
+      <td class="tdc" colspan="2"><br />PLATE III.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_5">Fig. 5</a>.</td>
+      <td class="tdl_ws1">A front elevation, shewing the second position.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_6">Fig. 6</a>.</td>
+      <td class="tdl_ws1">An horizontal section through the line WW. fig. 5.</td>
+    </tr><tr>
+      <td class="tdc" colspan="2"><br />PLATE IV.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_7">Fig. 7</a>.</td>
+      <td class="tdl_ws1">A front elevation, shewing the third position.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_8">Fig. 8</a>.</td>
+      <td class="tdl_ws1">A side elevation of the same position.</td>
+    </tr><tr>
+      <td class="tdc" colspan="2"><br />PLATE V.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_9">Fig. 9</a>.</td>
+      <td class="tdl_ws1">A vertical section through the line XX, fig. 8.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_10">Fig. 10</a>.</td>
+      <td class="tdl_ws1">A vertical section through the line YY, fig. 7,</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">shewing the false back closed.</td>
+    </tr><tr>
+      <td class="tdl"><a href="#FIG_11">Fig. 11</a>.</td>
+      <td class="tdl_ws1">A similar section, shewing the false back raised.
+          <span class="pagenum"><a name="Page_36" id="Page_36">[Pg 36]</a></span></td>
+    </tr>
+ </tbody>
+</table>
+<hr class="chap" />
+<div class="chapter">
+<p class="f120 space-below1">THE FOLLOWING LETTERS OF REFERENCE ARE<br />EMPLOYED IN ALL THE PLATES.</p>
+</div>
+<table border="0" cellspacing="0" summary=" " cellpadding="0" >
+  <tbody><tr>
+      <td class="tdl">A</td>
+      <td class="tdl_ws1">Front door of the small cupboard.</td>
+    </tr><tr>
+      <td class="tdl">B</td>
+      <td class="tdl_ws1">Back door of ditto.</td>
+    </tr><tr>
+      <td class="tdl">CC</td>
+      <td class="tdl_ws1">Front doors of the large cupboard.</td>
+    </tr><tr>
+      <td class="tdl">D</td>
+      <td class="tdl_ws1">Back door of ditto.</td>
+    </tr><tr>
+      <td class="tdl">E</td>
+      <td class="tdl_ws1">Door in the trunk.</td>
+    </tr><tr>
+      <td class="tdl">F</td>
+      <td class="tdl_ws1">Door in the thigh.</td>
+    </tr><tr>
+      <td class="tdl">GG</td>
+      <td class="tdl_ws1">The drawer.</td>
+    </tr><tr>
+      <td class="tdl">H</td>
+      <td class="tdl_ws1">Machinery in front of the small cupboard.</td>
+    </tr><tr>
+      <td class="tdl">I</td>
+      <td class="tdl_ws1">Screen behind the machinery.</td>
+    </tr><tr>
+      <td class="tdl">K</td>
+      <td class="tdl_ws1">Opening caused by the removal of part of</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">the floor of the small cupboard.</td>
+    </tr><tr>
+      <td class="tdl">L</td>
+      <td class="tdl_ws1">A box which serves to conceal an opening in the</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">floor of the large cupboard, made to facilitate</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">the first position; and which also serves as a</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">seat for the player in the third position.</td>
+    </tr><tr>
+      <td class="tdl">M</td>
+      <td class="tdl_ws1">A similar box to receive the toes of the player in</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">the first position.</td>
+    </tr><tr>
+      <td class="tdl">N</td>
+      <td class="tdl_ws1">The inner chest, filling up part of the trunk.</td>
+    </tr><tr>
+      <td class="tdl">O</td>
+      <td class="tdl_ws1">The space behind the drawer.</td>
+    </tr><tr>
+      <td class="tdl">PQ</td>
+      <td class="tdl_ws1">The false back, turning on a joint at Q.</td>
+    </tr><tr>
+      <td class="tdl">R</td>
+      <td class="tdl_ws1">Part of the partition formed of cloth stretched</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">tight, which is carried up by the false back,</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">to form the opening between the chambers.</td>
+    </tr><tr>
+      <td class="tdl">S</td>
+      <td class="tdl_ws1">The opening between the chambers.</td>
+    </tr><tr>
+      <td class="tdl">T</td>
+      <td class="tdl_ws1">The opening connecting the trunk and chest,</td>
+    </tr><tr>
+      <td class="tdl">&nbsp;</td>
+      <td class="tdl_ws3">which is partly concealed by the false back.</td>
+    </tr><tr>
+      <td class="tdl">U</td>
+      <td class="tdl_ws1">Panel which is slipped aside to admit the player.</td>
+    </tr>
+ </tbody>
+</table>
+<hr class="chap" />
+
+<div class="figcenter">
+    <a name="FIG_3" id="FIG_3"></a>
+    <p><b><i><span class="fontsize150">Plate 2.</span></i></b></p>
+    <p class="f150"><b><i>Fig. 3.</i></b></p>
+    <img src="images/fig03.jpg" alt="" width="600" height="459" />
+</div>
+<div class="figcenter">
+    <a name="FIG_4" id="FIG_4"></a>
+    <img src="images/fig04.jpg" alt="" width="600" height="457" />
+    <p class="f150"><b><i>Fig. 4.</i></b></p>
+    <p class="center"><i>Drawn on Stone by the Author.&emsp;Printed by C. Hullmandel.</i></p>
+</div>
+<hr class="r25" />
+<div class="figcenter">
+    <a name="FIG_5" id="FIG_5"></a>
+    <p><b><i><span class="fontsize150">Plate 3.</span></i></b></p>
+    <p class="f150"><b><i>Fig. 5.</i></b></p>
+    <img src="images/fig05.jpg" alt="" width="600" height="451" />
+</div>
+<div class="figcenter">
+    <a name="FIG_6" id="FIG_6"></a>
+    <img src="images/fig06.jpg" alt="" width="600" height="480" />
+    <p class="f150"><b><i>Fig. 6.</i></b></p>
+    <p class="center"><i>Drawn on Stone by the Author.&emsp;Printed by C. Hullmandel.</i></p>
+</div>
+<hr class="r25" />
+<div class="figcenter">
+    <a name="FIG_7" id="FIG_7"></a>
+    <p><b><i><span class="fontsize150">Plate 4.</span></i></b></p>
+    <p class="f150"><b><i>Fig. 7.</i></b></p>
+    <img src="images/fig07.jpg" alt="" width="600" height="493" />
+</div>
+<div class="figcenter">
+    <a name="FIG_8" id="FIG_8"></a>
+    <img src="images/fig08.jpg" alt="" width="600" height="489" />
+    <p class="f150"><b><i>Fig. 8.</i></b></p>
+    <p class="center"><i>Drawn on Stone by the Author.&emsp;Printed by C. Hullmandel.</i></p>
+</div>
+<hr class="r25" />
+<div class="figcenter">
+    <a name="FIG_9" id="FIG_9"></a>
+    <p><b><i><span class="fontsize150">Plate 5.</span></i></b></p>
+    <p class="f150"><b><i>Fig. 9.</i></b></p>
+    <img src="images/fig09.jpg" alt="" width="600" height="288" />
+</div>
+<div class="figcenter">
+    <a name="FIG_10" id="FIG_10"></a>
+    <p class="f150"><b><i>Fig. 10.</i></b></p>
+    <img src="images/fig10.jpg" alt="" width="600" height="293" />
+</div>
+<div class="figcenter">
+    <a name="FIG_11" id="FIG_11"></a>
+    <img src="images/fig11.jpg" alt="" width="600" height="349" />
+    <p class="f150"><b><i>Fig. 11.</i></b></p>
+    <p class="center"><i>Drawn on Stone by the Author.&emsp;Printed by C. Hullmandel.</i></p>
+</div>
+
+<hr class="chap" />
+<p><span class="pagenum"><a name="Page_37" id="Page_37">[Pg 37]</a></span></p>
+<div class="chapter"><h2>APPENDIX.</h2></div>
+
+<p>The Knight’s move over the chess board has engaged the attention of so
+many scientific men, that I cannot doubt that a collection of different
+solutions of the problem will prove acceptable to all admirers of chess.</p>
+
+<p>The Knight’s path is of two kinds—terminable and interminable—it is
+interminable, whenever the last, or concluding, move of a series be
+made on a square, which lies within the Knight’s reach of that from
+which he originally set out—and terminable in every other instance.</p>
+
+<p>Euler published a paper in the Memoirs of the Academy of Berlin, 1759,
+which contains a method of filling up all the squares, setting out from
+one of the corners. It also contains an endless or interminable route;
+and explains a principle by which these routes may be varied so as to
+end upon any square. Montmort, Demoivre, and Mairan, have severally
+given solutions of the same problem. These solutions will be found in
+the following collection.</p>
+
+<p><span class="pagenum"><a name="Page_38" id="Page_38">[Pg 38]</a></span>
+Observing that the Automaton, under the direction of Mr. Maelzel,
+occasionally traversed half the board, I was induced to pursue
+the subject, and I found that the move might be performed on any
+<i>parallelogram</i> consisting of <i>twelve</i> squares and upwards, with the
+exception of <i>fifteen</i> and <i>eighteen</i> squares. The whole board admits
+of a great variety both in the terminable and interminable routes.</p>
+
+<p>In describing the Knight’s path, I have preferred lines to figures;
+the former giving a clearer idea of the plan pursued, and affording a
+greater facility of comparing one route with another, than the latter.</p>
+
+<p class="f90 space-above3">DIRECTIONS FOR PLACING THE PLATES.</p>
+
+<p class="center"><i>Plate</i> 1 <i>to face the Title.</i><br />
+<i>Plates</i> 2 <i>to</i> 5—<i>Page</i> 36.<br />
+—— 6 <i>to</i> 10 —— 38.</p>
+
+<hr class="chap" />
+<p><span class="pagenum"><a name="Page_39" id="Page_39">[Pg 39]</a></span></p>
+
+<div class="figcenter">
+    <a name="PLATE_6" id="PLATE_6"></a>
+    <p class="center"><b><big><i>Plate 6.</i></big></b></p>
+    <img src="images/plate06.jpg" alt="Diagrams of Knight’s Moves." width="400" height="645" />
+</div>
+<hr class="r25" />
+<div class="figcenter">
+    <a name="PLATE_7" id="PLATE_7"></a>
+    <p class="center"><b><big><i>Plate 7.</i></big></b></p>
+    <img src="images/plate07.jpg" alt="Diagrams of Knight’s Moves." width="400" height="677" />
+</div>
+<hr class="r25" />
+<div class="figcenter">
+    <a name="PLATE_8" id="PLATE_8"></a>
+    <p class="center"><b><big><i>Plate 8.</i></big></b></p>
+    <img src="images/plate08.jpg" alt="Diagrams of Knight’s Moves." width="400" height="629" />
+</div>
+<hr class="r25" />
+<div class="figcenter">
+    <a name="PLATE_9" id="PLATE_9"></a>
+    <p class="center"><b><big><i>Plate 9.</i></big></b></p>
+    <img src="images/plate09.jpg" alt="Diagrams of Knight’s Moves." width="400" height="643" />
+</div>
+<hr class="r25" />
+<div class="figcenter">
+    <a name="PLATE_10" id="PLATE_10"></a>
+    <p class="center"><b><big><i>Plate 10.</i></big></b></p>
+    <img src="images/plate10.jpg" alt="Diagrams of Knight’s Moves." width="400" height="633" />
+</div>
+
+<hr class="chap" />
+<p><span class="pagenum"><a name="Page_40" id="Page_40">[Pg 40]</a></span></p>
+<div class="chapter"><h2>LIST OF THE KNIGHT’S MOVES</h2></div>
+
+<p class="center">Contained in Plates <a href="#PLATE_6">6</a>, <a href="#PLATE_7">7</a>,
+          <a href="#PLATE_8">8</a>, <a href="#PLATE_9">9</a>, and <a href="#PLATE_10">10</a>.</p>
+<hr class="r5" />
+<p class="center space-below2"><i>Methods of performing the Move on Parallelograms
+less than the whole Board.</i></p>
+
+<table border="0" cellspacing="0" summary="Knight Moves On Less Than The Whole Board." cellpadding="0" >
+  <tbody><tr>
+      <td class="tdr">No. 1</td>
+      <td class="tdc">the Move on</td>
+      <td class="tdc">&nbsp;12&nbsp;</td>
+      <td class="tdl">Squares</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;&nbsp;2</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">20</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;&nbsp;3</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">25</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;&nbsp;4</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">21</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;&nbsp;5</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">24</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;&nbsp;6</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">24</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;&nbsp;7</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">30</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;&nbsp;8</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">36</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;&nbsp;9</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">28</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;10</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">32</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;11</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">35</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;12</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">40</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;13</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">42</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;14</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">48</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;15</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">49</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;16</td>
+      <td class="tdc">-&emsp;-&emsp;-</td>
+      <td class="tdc">56</td>
+      <td class="tdc">-</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;17</td>
+      <td class="tdc">&nbsp;an Interminable Route on</td>
+      <td class="tdc">48</td>
+      <td class="tdc">Squares</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;18</td>
+      <td class="tdc">Do.<span class="ws3">Do.</span></td>
+      <td class="tdc">56</td>
+      <td class="tdc">-</td>
+    </tr>
+ </tbody>
+</table>
+
+<p class="center space-above2"><i>Terminable Routes over the whole Board.</i></p>
+<table border="0" cellspacing="0" summary="Terminable Routes over the whole Board." cellpadding="0" >
+  <tbody><tr>
+      <td class="tdr">No. 20</td>
+      <td class="tdc">&emsp;By&emsp;</td>
+      <td class="tdl">&nbsp;Euler</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;21</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;22</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;23</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;24</td>
+      <td class="tdc">By</td>
+      <td class="tdl">&nbsp;Demoivre</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;25</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;26</td>
+      <td class="tdc">By</td>
+      <td class="tdl">&nbsp;Mairan</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;27</td>
+      <td class="tdc">By</td>
+      <td class="tdc">Montmort</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;28</td>
+      <td class="tdc">By</td>
+      <td class="tdl">&nbsp;the Author</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;29</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr>
+ </tbody>
+</table>
+
+<p class="center space-above2"><i>Interminable Routes over the whole Board.</i></p>
+
+<table border="0" cellspacing="0" summary="Interminable Routes over the whole Board." cellpadding="0" >
+  <tbody><tr>
+      <td class="tdr">No. 30</td>
+      <td class="tdc">&emsp;By&emsp;</td>
+      <td class="tdl">&nbsp;Euler</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;31</td>
+      <td class="tdc">By</td>
+      <td class="tdc">Mons. W.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;32</td>
+      <td class="tdc">By</td>
+      <td class="tdc">the Author</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;33</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;34</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;35</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;36</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;37</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;38</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr><tr>
+      <td class="tdr">—&nbsp;&nbsp;39</td>
+      <td class="tdc">-</td>
+      <td class="tdc">Do.</td>
+    </tr>
+ </tbody>
+</table>
+
+<hr class="r25" />
+<p class="center"><span class="smcap">Howlett and Brimmer</span>,<br />
+Printers, 10, Frith Street, Soho.</p>
+
+<hr class="chap" />
+<div class="transnote bbox space-above2">
+<p class="f120 space-above1">Transcriber's Notes:</p>
+<hr class="r5" />
+<p class="indent">Uncertain or antiquated spellings or ancient words were not corrected.</p>
+<p class="indent">Typographical errors have been silently corrected.</p>
+</div>
+
+</body>
+</html>
